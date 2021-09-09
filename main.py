@@ -22,7 +22,7 @@ def preparing_dict(file):
 cook_book = preparing_dict('recipes.txt')
 
 
-def get_shop_list_by_dishes(*dishes, person_count):
+def get_shop_list_by_dishes(dishes, person_count):
     """Принимает блюда и количество персон, расчитывает необходимое количество ингредиентов"""
 
     new_list = {}
@@ -38,5 +38,13 @@ def get_shop_list_by_dishes(*dishes, person_count):
 
     return new_list
 
-dinner = get_shop_list_by_dishes('Омлет','Утка по-пекински',person_count=21)
-pprint(dinner)
+def main():
+    """Основной модуль программы"""
+
+    dishes = input('Перечислите блюда: ').split(', ')
+    person_count = int(input('Введите количество гостей: '))
+    dinner = get_shop_list_by_dishes(dishes, person_count)
+    pprint(dinner)
+
+main()
+
